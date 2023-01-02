@@ -38,15 +38,15 @@ function Character(props) {
     const {character} = props;
     const x = [`Luke Skywalker`, `C-3PO`, `R2-D2`, `Darth Vader`, `Leia Organa`, `Owen Lars`]
     const y = character.name.replace(/\s+/g, '') + '.jpg'
-    const [z,setz] = useState()
+    // const [z,setz] = useState()
 
-    useEffect(() => {
-        axios.get(`${character.homeworld}`)
-        .then(res => {
-            setz(res.data.name);
-        })
-        .catch(err => console.log(err))
-    }, []);
+    // useEffect(() => {
+    //     axios.get(`${character.homeworld}`)
+    //     .then(res => {
+    //         setz(res.data.name);
+    //     })
+    //     .catch(err => console.log(err))
+    // }, []);
 
   return(
     
@@ -58,9 +58,9 @@ function Character(props) {
             <h2>{`${character.name}`} </h2>
             <p>{`${character.birth_year}`}</p>
             <p>{`${character.gender}`}</p>
-            {
+            { /*
                 z ? <p>{`${z}`}</p> : <p></p>
-            }
+    */ } 
         </TextDiv>
     </CharDiv>
   )

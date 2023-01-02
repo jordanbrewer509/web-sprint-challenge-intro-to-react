@@ -14,14 +14,13 @@ const App = () => {
       })
       .catch(err => console.log(err))
   }, []);
-
+  
 if(char) {
     return (
       <div className="App">
         <h1 className="Header">Characters</h1>
         <div className='container'>
           {char.map((element => {
-            console.log(element);
             return <Character character={element} />
           }))}
         </div>
@@ -31,7 +30,7 @@ if(char) {
   } else {
 
     return(
-      <h1>Loading...</h1>
+      <div/>
     )
   }
 }

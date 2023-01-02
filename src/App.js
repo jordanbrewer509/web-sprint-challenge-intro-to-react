@@ -16,7 +16,6 @@ const App = () => {
   }, []);
 
 if(char) {
- 
     return (
       <div className="App">
         <h1 className="Header">Characters</h1>
@@ -36,4 +35,4 @@ if(char) {
     )
   }
 }
-export default App;
+export default App; 

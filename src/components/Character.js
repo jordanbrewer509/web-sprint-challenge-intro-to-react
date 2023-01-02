@@ -47,7 +47,7 @@ function Character(props) {
         })
         .catch(err => console.log(err))
     }, []);
-if(z) {
+
   return(
     
     <CharDiv className='characters'>
@@ -58,12 +58,12 @@ if(z) {
             <h2>{`${character.name}`} </h2>
             <p>{`${character.birth_year}`}</p>
             <p>{`${character.gender}`}</p>
-            <p>{`${z}`}</p>
+            {
+                z ? <p>{`${z}`}</p> : <p></p>
+            }
         </TextDiv>
     </CharDiv>
   )
-  } else {
-    return <p>Loading...</p>
-  }
+
 }
 export default Character;

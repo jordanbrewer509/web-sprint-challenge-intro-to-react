@@ -1,20 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import Character from './components/Character';
+import './App.css'
+import axios from 'axios';
 
 const App = () => {
 
-  const characterArr = [1, 2, 3, 4, 5, 6];
+  const [ char, getChar ] = useState();
 
-  return (
-    <div className="App">
-      <h1 className="Header">Characters</h1>
-      <div className='container'>
-        <div className='box'>
-          <img src=''/>
+  useEffect(() => {
+      axios.get(`https://swapi.dev/api/people`)
+      .then(res => {
+          getChar(res.data.results);
+      })
+      .catch(err => console.log(err))
+  }, []);
+
+if(char) {
+
+    return (
+      <div className="App">
+        <h1 className="Header">Characters</h1>
+        <div className='container'>
+          {char.map((element => {
+            console.log(element);
+            return <Character character={element} />
+          }))}
         </div>
       </div>
-    </div>
-  );
-}
+    );
 
+  } else {
+
+    return(
+      <h1>Loading...</h1>
+    )
+  }
+}
 export default App;

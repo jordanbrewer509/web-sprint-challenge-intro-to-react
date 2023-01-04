@@ -8,9 +8,9 @@ const App = () => {
   const [ char, getChar ] = useState();
 
   useEffect(() => {
-      axios.get(`https://swapi.dev/api/people`)
+      axios.get(`https://swapi.dev/api/people/`)
       .then(res => {
-          getChar(res.data.results);
+          getChar(res.data);
       })
       .catch(err => console.log(err))
   }, []);

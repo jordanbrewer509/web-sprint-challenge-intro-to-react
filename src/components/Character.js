@@ -36,34 +36,9 @@ height: 50%;
 function Character(props) {
 
     const {character} = props;
-    const x = [`Luke Skywalker`, `C-3PO`, `R2-D2`, `Darth Vader`, `Leia Organa`, `Owen Lars`]
-    const y = character.name.replace(/\s+/g, '') + '.jpg'
-    // const [z,setz] = useState()
 
-    // useEffect(() => {
-    //     axios.get(`${character.homeworld}`)
-    //     .then(res => {
-    //         setz(res.data.name);
-    //     })
-    //     .catch(err => console.log(err))
-    // }, []);
-
-  return(
-    
-    <CharDiv className='characters'>
-        {
-            x.includes(character.name) ? <CharImg src={require('../pfp/'+y)}/> : <CharImg src=''/>
-        }
-        <TextDiv className='text'>
-            <h2>{`${character.name}`} </h2>
-            <p>{`${character.birth_year}`}</p>
-            <p>{`${character.gender}`}</p>
-            { /*
-                z ? <p>{`${z}`}</p> : <p></p>
-    */ } 
-        </TextDiv>
-    </CharDiv>
-  )
-
+    return (
+            <h2>{character}</h2>
+    )
 }
 export default Character;

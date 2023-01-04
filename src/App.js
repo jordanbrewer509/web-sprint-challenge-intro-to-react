@@ -3,7 +3,7 @@ import Character from './components/Character';
 import './App.css'
 import axios from 'axios';
 
-const App = () => {
+const App = () => { 
 
   const [ char, getChar ] = useState();
 
@@ -21,7 +21,7 @@ if(char) {
         <h1 className="Header">Characters</h1>
         <div className='container'>
           {char.map((element => {
-            return <Character character={element} />
+            return <Character character={element.name}/>
           }))}
         </div>
       </div>
